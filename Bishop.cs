@@ -13,10 +13,11 @@ namespace ChessScore
      * Bu fonksiyondaki double değişkenlerinin eşitliği "==" ile değil, aralarındaki farkın 0.0000001'den küçük olup olmadığına bakılarak kontrol edilmiştir.
      * Bunun sebebi, double değişkenlerinde virgülden sonra 7'den sonraki basamaklarında olası bir yuvarlama sonucunda "==" mantığının bozulmasının önüne geçilmek istenmesidir.
      */
-    internal class Bishop
+    internal class Bishop : ChessVariables
     {
+        
 
-        public static double CheckBishop(string element, string boardElement, int i, int j, double score, string[,] board)
+        public static double CheckBishop()
         {
 
             double controlScore = score; //Kontrol değişkeni

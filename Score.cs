@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChessScore
 {
-    internal class Score
+    internal class Score : ChessVariables
     {
 
         /*
@@ -33,7 +33,7 @@ namespace ChessScore
                 else
                     element = "s";
             }
-
+            
             // Taşların puan tablosu
             switch (element)
             {
@@ -66,42 +66,87 @@ namespace ChessScore
 
             //Kale tarafından tehdit kontrolü
             boardElement = "k" + opponent;
-            finalScore = Rook.CheckRook(element, boardElement, i, j, score, board);
+            Rook rook = new Rook();
+            rook.setElement(element);
+            rook.setBoardElement(boardElement);
+            rook.setX(i);
+            rook.setY(j);
+            rook.setScore(score);
+            rook.setBoard(board);
+            finalScore = Rook.CheckRook();
             if ((score - finalScore) > 0.0000001)
                 return finalScore;
 
 
             //Fil tarafından tehdit kontrolü
             boardElement = "f" + opponent;
-            finalScore = Bishop.CheckBishop(element, boardElement, i, j, score, board);
+            Bishop bishop = new Bishop();
+            bishop.setElement(element);
+            bishop.setBoardElement(boardElement);
+            bishop.setX(i);
+            bishop.setY(j);
+            bishop.setScore(score);
+            bishop.setBoard(board);
+            finalScore = Bishop.CheckBishop();
             if ((score - finalScore) > 0.0000001)
                 return finalScore;
 
             //Vezir tarafından tehdit kontrolü
             boardElement = "v" + opponent;
-            finalScore = Bishop.CheckBishop(element, boardElement, i, j, score, board);
+            bishop.setElement(element);
+            bishop.setBoardElement(boardElement);
+            bishop.setX(i);
+            bishop.setY(j);
+            bishop.setScore(score);
+            bishop.setBoard(board);
+            finalScore = Bishop.CheckBishop();
             if ((score - finalScore) > 0.0000001)
                 return finalScore;
 
-            finalScore = Rook.CheckRook(element, boardElement, i, j, score, board);
+            rook.setElement(element);
+            rook.setBoardElement(boardElement);
+            rook.setX(i);
+            rook.setY(j);
+            rook.setScore(score);
+            rook.setBoard(board);
+            finalScore = Rook.CheckRook();
             if ((score - finalScore) > 0.0000001)
                 return finalScore;
 
             //Kral tarafından tehdit kontrolü
             boardElement = "s" + opponent;
-            finalScore = King.CheckKing(i, j, boardElement, score, board);
+            King king = new King();
+            king.setElement(element);
+            king.setBoardElement(boardElement);
+            king.setX(i);
+            king.setY(j);
+            king.setScore(score);
+            king.setBoard(board);
+            finalScore = King.CheckKing();
             if ((score - finalScore) > 0.0000001)
                 return finalScore;
 
             //Piyon tarafından tehdit kontrolü
             boardElement = "p" + opponent;
-            finalScore = Pawn.CheckPawn(element, boardElement, i, j, score, board);
+            Pawn pawn = new Pawn();
+            pawn.setBoardElement(boardElement);
+            pawn.setX(i);
+            pawn.setY(j);
+            pawn.setScore(score);
+            pawn.setBoard(board);
+            finalScore = Pawn.CheckPawn();
             if ((score - finalScore) > 0.0000001)
                 return finalScore;
 
             //At tarafından tehdit kontrolü
             boardElement = "a" + opponent;
-            finalScore = Knight.CheckKnight(boardElement, i, j, score, board);
+            Knight knight = new Knight();
+            knight.setBoardElement(boardElement);
+            knight.setX(i);
+            knight.setY(j);
+            knight.setScore(score);
+            knight.setBoard(board);
+            finalScore = Knight.CheckKnight();
             if ((score - finalScore) > 0.0000001)
                 return finalScore;
 

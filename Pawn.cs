@@ -10,10 +10,10 @@ namespace ChessScore
      * CheckPawn fonksiyonu, tehdit altında olup olmadığı kontrol edilen taşın, piyon tarafından tehdit edilip edilmediğini kontrol eder.
      * Tehdit edilmiyorsa taşın puanını, tehdit ediliyorsa taşın puanının yarısını döner.
      */
-    internal class Pawn
+    internal class Pawn : ChessVariables
     {
 
-        public static double CheckPawn(string element, string boardElement, int i, int j, double score, string[,] board)
+        public static double CheckPawn()
         {
             /*
              * Taşın konumuna göre, sağ çaprazında veya sol çaprazında karşı takımın piyonunun olup olmadığını kontrol eder.

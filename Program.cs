@@ -68,10 +68,11 @@ namespace ChessScore
                                 finalScoreWhite += Score.FinalScore(board[i, j], i, j, board);
                             else if (!board[i, j].Equals("--"))
                                 finalScoreBlack += Score.FinalScore(board[i, j], i, j, board);
+
                         }
 
                     }
-
+                    
                 //Sonuçlar, dosyanın ismi + "Score" (mesela board1Score) olacak şekilde ilgili dosyalara yazdırılıyor.
                 string text = "Siyah Takim: " + finalScoreBlack+"\nBeyaz Takim: " + finalScoreWhite;
 

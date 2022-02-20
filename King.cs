@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ChessScore
 {
-    internal class King
+    internal class King : ChessVariables
     {
         /*
          * CheckKing fonksiyonu, tehdit altında olup olmadığı kontrol edilen taşın, kral tarafından tehdit edilip edilmediğini kontrol eder.
          * Tehdit edilmiyorsa taşın puanını, tehdit ediliyorsa taşın puanının yarısını döner.
          */
-        public static double CheckKing(int i, int j, string boardElement, double score, string[,] board)
+        public static double CheckKing()
         {
             //Taşın konumuna görei etrafındaki tüm kareler kontrol ediliyor.
 

@@ -13,23 +13,13 @@ namespace ChessScore
      * Bu fonksiyondaki double değişkenlerinin eşitliği "==" ile değil, aralarındaki farkın 0.0000001'den küçük olup olmadığına bakılarak kontrol edilmiştir.
      * Bunun sebebi, double değişkenlerinde virgülden sonra 7'den sonraki basamaklarında olası bir yuvarlama sonucunda "==" mantığının bozulmasının önüne geçilmek istenmesidir.
      */
-    internal class Knight
+    internal class Knight : ChessVariables
     {
 
-        private static int i;
-        private static int j;
-        private static string boardElement;
-        private static string[,] board;
-        private static double score;
-
+        
         // Taşımızın pozisyonuna göre, at tarafından tehdit edilebilecek her kareye bakılıyor.
-        public static double CheckKnight(string boardElement, int i, int j, double score, string[,] board)
+        public static double CheckKnight()
         {
-            Knight.i = i;
-            Knight.j = j;
-            Knight.boardElement = boardElement;
-            Knight.score = score;
-            Knight.board = board;
 
             double controlScore = score;
 

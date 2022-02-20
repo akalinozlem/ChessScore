@@ -10,9 +10,9 @@ namespace ChessScore
      * CheckRook fonksiyonu, tehdit altında olup olmadığı kontrol edilen taşın, kale tarafından tehdit edilip edilmediğini kontrol eder.
      * Tehdit edilmiyorsa taşın puanını, tehdit ediliyorsa taşın puanının yarısını döner.
      */
-    internal class Rook
+    internal class Rook : ChessVariables
     {
-        public static double CheckRook(string element, string boardElement, int i, int j, double score, string[,] board)
+        public static double CheckRook()
         {
             #region CheckCastle
             
